@@ -39,18 +39,18 @@ public class Main {
         radar.observe(new TrafficObservation("XYZ5678", LocalDate.now(), CarType.TRUCK, 55, true));
         radar.observe(new TrafficObservation("DEF9012", LocalDate.now(), CarType.TRUCK, 70, false));
 
-        System.out.println("=== Issued Fines ===");
+        System.out.println("fines=");
         for (Fine fine : radar.getFines()) {
             fine.print();
             System.out.println();
         }
 
-        System.out.println("=== All Possible Fines (plate -> total) ===");
+        System.out.println("all Possible Fines=");
         for (Map.Entry<String, Integer> entry : radar.getAllPossibleFines().entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue() + " EGP");
         }
 
-        System.out.println("\n=== Violated Rules with Count ===");
+        System.out.println("\nviolated Rules and Count =");
         for (Map.Entry<String, Integer> entry : radar.getAllViolatedRulesWithCount().entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
